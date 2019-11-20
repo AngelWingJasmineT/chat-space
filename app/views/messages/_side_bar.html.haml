@@ -1,8 +1,8 @@
 .chat-side
   .side-header
     .side-header__box
-      .side-header__box__user-name
-        JasmineT
+      %h3.side-header__box__user-name
+        = current_user.name
       .side-header__box__menu
         =link_to "#", class: "side-header__box__menu__new-group" do
           = icon('fa fa-edit', 'edit-square')
