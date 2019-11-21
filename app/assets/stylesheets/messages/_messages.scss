@@ -9,6 +9,11 @@ $text-color: #434A54;
   float: left;
 }
 
+a {
+  text-decoration: none;
+  color: #38aef0;
+}
+
 .side-header{
   background-color: #253141;
   height: 100px;
@@ -22,6 +27,7 @@ $text-color: #434A54;
     display: flex;
     justify-content: space-between;
     &__user-name{
+      font-weight: bold;
       font-size: 16px;
       line-height: 100px;
       margin:0 0;
@@ -47,13 +53,11 @@ $text-color: #434A54;
   &__group {
     margin: 0 0 40px;
     &__group-name{
-      text-decoration: none;
       color: white;
       font-size: 15px;
       margin: 0 0 5px;
     }
     &__latest-message{
-      text-decoration: none;
       color: white;
       font-size: 11px;
     }
@@ -91,7 +95,6 @@ $text-color: #434A54;
     }
   }
   &__edit-btn{
-    text-decoration: none;
     color: #38aef0;
     height: 38px;
     line-height: 40px;
@@ -117,7 +120,7 @@ $text-color: #434A54;
       font-size: 16px;
       color: #000000;
       margin: 0 0 10px;
-      &__usser-name{
+      &__user-name{
         font-size: 16px;
         font-weight: bold;
         color: #434A50;
