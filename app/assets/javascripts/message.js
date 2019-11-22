@@ -1,5 +1,4 @@
 $(function(){ 
-  // console.log("todo")
   function buildHTML(message){
     if (message.image) {
       var html =
