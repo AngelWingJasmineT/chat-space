@@ -1,44 +1,25 @@
 $(function(){ 
   function buildHTML(message){
-    if (message.image) {
-      var html =
-        `<div class="messages__message" data-message-id=${message.id}>
-          <div class="messages__message__upper-message">
-            <div class="messages__message__upper-message__user-name">
-              ${message.user_name}
-            </div>
-            <div class="messages__message__upper-message__date">
-              ${message.date}
-            </div>
-          </div>
-          <div class="messages__message__lower-message">
-            <p class="messages__message__lower-message__content">
-              ${message.content}
-            </p>
-          </div>
-          <img src=${message.image} >
-        </div>`
-      return html;
-    } else {
-      var html =
-        `<div class="messages__message" data-message-id=${message.id}>
-          <div class="messages__message__upper-message">
-            <div class="messages__message__upper-message__user-name">
-              ${message.user_name}
-            </div>
-            <div class="messages__message__upper-message__date">
-              ${message.date}
-            </div>
-          </div>
-          <div class="messages__message__lower-message">
-            <p class="messages__message__lower-message__content">
-              ${message.content}
-            </p>
-          </div>
-        </div>`
-      return html;
-    };
-  };
+    var image = message.image ? `<img class="message-text__image" src=${message.image}>` : ""; 
+    
+    var newmessage = `<div class="messages__message" data-message-id=${message.id}>
+                  <div class="messages__message__upper-message">
+                    <div class="messages__message__upper-message__user-name">
+                      ${message.user_name}
+                    </div>
+                    <div class="messages__message__upper-message__date">
+                      ${message.date}
+                      </div>
+                  </div>
+                  <div class="messages__message__lower-message">
+                    <p class="messages__message__lower-message__content">
+                      ${message.content}
+                    </p>
+                  </div>
+                    ${image}
+                  </div>`
+    return newmessage;
+  }
 $('.new_message').on('submit', function(e){
   e.preventDefault();
   var formData = new FormData(this);
