@@ -1,7 +1,7 @@
 $(function(){ 
 
   var buildMessageHTML = function(message) {
-    if (message.content && message.image) {
+    image = (message.image) ? `<img class= "lower-message__image" src=${message.image} >` : "";
       var html = `<div class="messages__message" data-message-id="${message.id}"> 
                     <div class="messages__message__upper-message">
                       <div class="messages__message__upper-message__user-name">
@@ -15,40 +15,9 @@ $(function(){
                       <p class="messages__message__lower-message__content">
                         ${message.content}
                       </p>
-                        <img src="${message.image}" class="lower-message__image">
+                        ${image}
                     </div>
                   </div>`
-    } else if (message.content) {
-      var html = `<div class="messages__message" data-message-id="${message.id}"> 
-                    <div class="messages__message__upper-message">
-                      <div class="messages__message__upper-message__user-name">
-                        ${message.user_name}
-                      </div>
-                      <div class="messages__message__upper-message__date">
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <div class="messages__message__lower-message">
-                      <p class="messages__message__lower-message__content">
-                        ${message.content}
-                      </p>
-                    </div>
-                  </div>`
-    } else if (message.image) {
-      var html = `<div class="messages__message" data-message-id="${message.id}"> 
-                    <div class="messages__message__upper-message">
-                      <div class="messages__message__upper-message__user-name">
-                        ${message.user_name}
-                      </div>
-                      <div class="messages__message__upper-message__date">
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <div class="messages__message__lower-message">
-                    <img src="${message.image}" class="lower-message__image">
-                    </div>
-                  </div>`
-    };
       return html;
   };
 
